@@ -13,11 +13,11 @@ const Header = () => {
         <div className='min-w-[56px]'>
         <NavLink to={""}><img src={logo} alt="" className="w-14"/></NavLink>
         </div>
-        <nav className='flex gap-10 lg:gap-16 xl:mr-16'>
-            <NavLink to={""} className={({ isActive }) => `text-slate-500 ${isActive ? "border-b-2 font-medium pb-2 border-solid border-green-800 text-gray-900" : ""} `} end>Home</NavLink>
-            <NavLink to={"giftcards"} className={({ isActive }) => `text-slate-500 ${isActive ? "border-b-2 font-medium pb-2 border-solid border-green-800 text-gray-900" : ""} `}>Gift</NavLink>
-            <NavLink to={"ordering"} className={({ isActive }) => `text-slate-500 ${isActive ? "border-b-2 font-medium pb-2 border-solid border-green-800 text-gray-900" : ""} `}>Order</NavLink>
-            <NavLink to={"pay"} className={({ isActive }) => `text-slate-500 ${isActive ? "border-b-2 font-medium pb-2 border-solid border-green-800 text-gray-900" : ""} `}>Payment</NavLink>
+        <nav className='flex gap-10 lg:gap-16 xl:mr-10'>
+            <NavLink to={""} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Home</NavLink>
+            <NavLink to={"giftcards"} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Gift</NavLink>
+            <NavLink to={"ordering"} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Order</NavLink>
+            <NavLink to={"pay"} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Payment</NavLink>
             
         </nav>
 
