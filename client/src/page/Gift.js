@@ -3,7 +3,6 @@ import Rabbits_MugImage from "../assests/img/Rabbits_Mug.png"
 import Butter_cold_cup_Valentines from "../assests/img/Butter_cold_cup_Valentines.png"
 import Hazelnut_coffee from "../assests/img/Hazelnut_Dolce_frappuccino_eae87c32b3.png"
 import { NavLink, Outlet } from 'react-router-dom'
-import GiftCard from '../component/GiftCard'
 
 const Gift = () => {
   return (

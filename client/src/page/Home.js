@@ -1,7 +1,6 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { HandcraftedCurations } from '../database'
-import veg from "../assests/img/veg.svg"
 import slideImage1 from "../assests/img/Barista_Pride_ca8aec571f.png"
 import slideImage2 from "../assests/img/Group_1249_39083973b4.png"
 import slideImage3 from "../assests/img/Hazelnut_Dolce_frappuccino_eae87c32b3.png"
