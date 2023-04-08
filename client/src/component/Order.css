@@ -35,7 +35,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 415px;
-    min-height: 232px;
+    max-height: 232px;
     padding: 1em;
     background: #f9f9f9;
     border-radius: 8px;
@@ -76,6 +76,8 @@
 
 .showorder .card-box .card-info .card-details {
     font-size: 12px;
+    height: 68px;
+    text-overflow: ellipsis; 
 }
 
 .showorder .card-box .card-footer {
@@ -94,10 +96,11 @@
 
 .showorder .card-box .card-footer button {
     width: 102.4px;
+    height: 34px;
     font-size: 16px;
     font-weight: 500;
     font-family: SoDoSans_Semibold,Helvetica,sans-serif;
-    margin-top: 80px;
+    margin-top: 75px;
     color: #fff;
     background-color: green;
     border-radius: 50px;
