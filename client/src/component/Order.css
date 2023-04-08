@@ -25,4 +25,13 @@
 
 .showorder .card-body {
     width: 415px;
+    min-height: 232px;
+    padding: 1em;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.showorder .card-body:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
