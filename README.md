@@ -1,8 +1,7 @@
 # Getting Started
 
-1. typing `npm install react-scripts --save`
-2. typing `cd client` and typing `npm start`
-3. new terminal and typing `cd server` and typing `npm run dev`
+1. typing `cd client` and typing `npm install react-scripts --save` and `npm start`
+2. new terminal and typing `cd server` and typing `npm run dev`
 
 # How to Save to Github
 
