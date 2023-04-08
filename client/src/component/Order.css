@@ -18,11 +18,16 @@
 }
 
 .showorder {
+    width: 1320px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    align-content: space-around;
     padding-top: 6em;
     padding-bottom: 6em;
+    margin: auto;
+    gap: 20px;
 }
 
 .showorder .card-body {
