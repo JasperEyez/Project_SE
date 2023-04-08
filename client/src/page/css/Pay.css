@@ -103,6 +103,10 @@
     font-size: 20px;
 }
 
+.showcart .card-edit .x button:hover {
+    color: #fe0000;
+}
+
 .showcart .card-edit .input-box {
     display: block;
 }
