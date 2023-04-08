@@ -25,6 +25,7 @@ function Drinks() {
     <div className='py-3'>
       <div className="showorder">
           {menuList.map((val, key) => {
+            if(val.order_type === 'drink')
               return (
                 <div className="menu card">
                   <div className="card-body">

@@ -24,6 +24,7 @@ function OrderBestseller() {
     <div className='py-3'>
       <div className="showorder">
           {menuList.map((val, key) => {
+            if(val.order_id%2 === 0)
               return (
                 <div className="menu card">
                   <div className="card-body">
