@@ -27,7 +27,6 @@ function OrderMerchandise() {
               return (
                 <div className="menu card">
                   <div className="card-body">
-                    <Image></Image>
                     <p className="card-text">Name: {val.order_name}</p>
                     <p className="card-text">Details: {val.order_details}</p>
                     <p className="card-text">Price: {val.order_price} ฿</p>
