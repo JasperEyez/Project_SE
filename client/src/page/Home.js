@@ -82,7 +82,7 @@ function Home () {
                       </div>
                       <div className='flex justify-between font-semibold my-2'>
                         <p>฿ <span>{val.order_price}</span></p>
-                        <button className='text-white bg-green-800 hover:bg-[#1e3932] py-1 px-5 rounded-full'>Add Item</button>
+                        <button className='text-white bg-[#00754a] hover:bg-[#1e3932] shadow-[0 4px 15px #a3a3a3ad] py-1 px-5 rounded-full'>Add Item</button>
                       </div>
                     </div>
                   )
@@ -185,16 +185,11 @@ function Home () {
                   <div key={el.id} className="overflow-hidden rounded-xl border shadow-md min-w-[280px]">
                     <img src={el.img} className="h-44 object-cover" alt=''/>
                     <div className='p-5'>
-                      <div className='flex items-center'>
-                        <img src={veg} className='' alt=''/>
-                        <p className='text-green-700 bg-green-100 px-2 rounded-full'>New Lunch</p>
-                      </div>
                       <h2 className='font-semibold text-[#1e3932]'>{el.name}</h2>
-                      <p className='uppercase text-[10px]'><span>{el.length}.{el.kcal}kcal</span></p>
                       <p className='my-5 text-xs text-gray-500'>{el.desc}</p>
                       <div className='flex justify-between font-semibold my-2'>
                         <p>฿ <span>{el.price}</span></p>
-                        <button className='text-white bg-green-800 hover:bg-[#1e3932] py-1 px-5 rounded-full'>Add Item</button>
+                        <button className='text-white bg-[#00754a] hover:bg-[#1e3932] py-1 px-5 rounded-full'>Add Item</button>
                       </div>
                     </div>
 

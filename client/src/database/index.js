@@ -99,8 +99,6 @@ export const BaristaRecommends = [
     {
         id:"offering1",
         name: "Hazelnut Dolce Latte",
-        length: "SHORT(237ML)",
-        kcal: 143,
         desc: "A perfect combination of our rich espresso with sweet, creamy hazelnut sauce and topped with chocolate dust.",
         price : 404.25,
         img : latestOfferingImage1,
@@ -109,8 +107,6 @@ export const BaristaRecommends = [
     {   
         id:"offering2",
         name: "Hazelnut Dolce Latte",
-        length: "SHORT(237ML)",
-        kcal: 143,
         desc: "A perfect combination of our rich espresso with sweet, creamy hazelnut sauce and topped with chocolate dust.",
         price : 472.50,
         img : latestOfferingImage2,
@@ -118,8 +114,6 @@ export const BaristaRecommends = [
     {
         id:"offering3",
         name: "Hazelnut Dolce Latte",
-        length: "SHORT(237ML)",
-        kcal: 143,
         desc: "A perfect combination of our rich espresso with sweet, creamy hazelnut sauce and topped with chocolate dust.",
         price : 435.75,
         img : latestOfferingImage3,
