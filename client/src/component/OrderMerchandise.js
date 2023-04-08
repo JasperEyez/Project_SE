@@ -27,7 +27,6 @@ function OrderMerchandise() {
                     <p className="card-text">Price: {val.order_price} ฿</p>
                     <p className="card-text">Type: {val.order_type}</p>
                     <p className="card-text">Image: {val.order_pic}</p>
-                    <p className="card-text">Image: {val.order_pic}</p>
                   </div>
                 </div>
               )
