@@ -15,9 +15,6 @@ import GiftFeature from './component/GiftFeature';
 import GiftAnytime from './component/GiftAnytime';
 import GiftCong from './component/GiftCong';
 import GiftThank from './component/GiftThank';
-import OrderMerchandise from './component/OrderMerchandise';
-import OrderCoffeeAtHome from './component/OrderCoffeeAtHome';
-import OrderReadytoEat from './component/OrderReadytoEat';
 import OrderFood from './component/OrderFood';
 import OrderBestseller from './component/OrderBestseller';
 import OrderDrinks from './component/OrderDrinks';
@@ -35,12 +32,9 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path='thank' element={<GiftThank/>}/>
       </Route>
     <Route path='/ordering' element ={<Order/>}>
-      <Route path='' element = {<OrderMerchandise/>}/>
-      <Route path='coffeeathome' element = {<OrderCoffeeAtHome/>}/>
-      <Route path='readytoeat' element = {<OrderReadytoEat/>}/>
-      <Route path='food' element = {<OrderFood/>}/>
-      <Route path='bestseller' element = {<OrderBestseller/>}/>
+      <Route path='' element = {<OrderBestseller/>}/>
       <Route path='drinks' element = {<OrderDrinks/>}/>
+      <Route path='food' element = {<OrderFood/>}/>
     </Route>
     <Route path='/pay' element ={<Pay/>}/>
     <Route path='/profile' element ={<Profile/>}/>

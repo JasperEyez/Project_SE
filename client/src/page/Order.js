@@ -18,12 +18,9 @@ const Order = () => {
     <div className=''>
       <div className="w-full bg-[#ebebeb]">
         <div className='text-black px-4 md:px-0 sm:px-0 md:w-4/5 m-auto relative flex items-center'>
-          <NavLink to="" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}end>Merchandise</NavLink>
-          <NavLink to="coffeeathome" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>Coffee At Home</NavLink>
-          <NavLink to="readytoeat" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>Ready to Eat</NavLink>
-          <NavLink to="food" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>Food</NavLink>
-          <NavLink to="bestseller" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>Bestseller</NavLink>
+          <NavLink to="" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}end>Bestseller</NavLink>
           <NavLink to="drinks" className={({ isActive }) => `px-10 h-full py-3 whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>Drinks</NavLink>
+          <NavLink to="food" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>Food</NavLink>
         </div>
       </div>
       
