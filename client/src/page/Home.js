@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { HandcraftedCurations, BaristaRecommends } from '../database'
+import { HandcraftedCurations } from '../database'
 import veg from "../assests/img/veg.svg"
 import slideImage1 from "../assests/img/Barista_Pride_ca8aec571f.png"
 import slideImage2 from "../assests/img/Group_1249_39083973b4.png"
@@ -12,15 +12,33 @@ import slideImage6 from "../assests/img/Vegan_combo_bea05a1288.png"
 import { LatestOfferingsData } from '../database'
 
 import Coffee_cherry_spices from "../assests/img/Coffee_cherry_spices_9de46c3e1b.jpg"
+import Axios from 'axios'
+import { useState, useEffect } from 'react'
 
-const Home = () => {
+function Home () {
+
+  const [menuList,setMenuList] = useState([]);
+
+  useEffect(() => {
+    fetchMenu();
+  }, []);
+
+  const fetchMenu = () => {
+    Axios.get('http://localhost:3001/menu').then((res) => {
+      setMenuList(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
+
   return (
     <>
       <div className='bg-[#1e3932] py-2 sm:py-6'>
         <div className=' text-white  text-lg tracking-wide w-full'>
           <div className='px-4  sm:px-0 md:w-4/5 m-auto flex justify-between items-center gap-5'>
             <p className='text-sm sm:text-xl max-w-md sm:max-w-xl'>A world of rewards awaits you! Sign up now.</p>
-            <Link to={"/rewards"} className='text-sm border-2 px-2 py-1 rounded-full whitespace-nowrap'>Know More</Link>
+            <Link to={"/login"} className='text-sm border-2 px-2 py-1 rounded-full whitespace-nowrap'>Sing up</Link>
           </div>
         </div>
       </div>
@@ -53,19 +71,17 @@ const Home = () => {
 
             <div className='flex gap-2 md:gap-6 overflow-scroll overflow-y-hidden w-full absolute top-16 sm:px-4 ' >
               {
-                BaristaRecommends.map((el) => {
+                menuList.map((val,key) => {
                   return (
                     <div className='w-full bg-white border-2 max-w-sm min-w-[280px] sm:min-w-[340px] py-4 px-5 box-border rounded-2xl'>
                       <div className='flex gap-4'>
-                        <img src={el.img} className='w-20 bg-red-500 h-20 rounded-md object-cover' alt=''/>
+                        <img src={val.order_pic} className='w-20 bg-red-500 h-20 rounded-md object-cover' alt=''/>
                         <div>
-                          <img src={veg} className='' alt=''/>
-                          <h3 className='font-semibold'>{el.title}</h3>
-                          <p className='text-xs text-gray-400'>TALL({el.tall} ML) .{el.kcal} kcal</p>
+                          <h3 className='font-semibold'>{val.order_name}</h3>
                         </div>
                       </div>
                       <div className='flex justify-between font-semibold my-2'>
-                        <p>฿ <span>{el.price}</span></p>
+                        <p>฿ <span>{val.order_price}</span></p>
                         <button className='text-white bg-green-800 hover:bg-[#1e3932] py-1 px-5 rounded-full'>Add Item</button>
                       </div>
                     </div>

@@ -10,8 +10,8 @@ const Header = () => {
      {/* desktop and table version */}
     <div className='w-full bg-white hidden sm:flex'>
     <header className='md:w-4/5 m-auto flex flex-col lg:flex-row items-center sm:gap-8 md:gap-10 lg:gap-16 py-4 '>
-        <div className='min-w-[40px]'>
-            <img src={logo} alt="" className="w-20" />
+        <div className='min-w-[56px]'>
+        <NavLink to={""}><img src={logo} alt="" className="w-14"/></NavLink>
         </div>
         <nav className='flex gap-10 lg:gap-16 xl:mr-16'>
             <NavLink to={""} className={({ isActive }) => `text-slate-500 ${isActive ? "border-b-2 font-medium pb-2 border-solid border-green-800 text-gray-900" : ""} `} end>Home</NavLink>
