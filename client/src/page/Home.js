@@ -29,11 +29,11 @@ const Home = () => {
       <div className='bg-white py-7'>
         <div className='px-4   sm:px-0 md:w-4/5 m-auto'>
           <h1 className='text-[#1e3932] text-2xl font-bold mb-4'>Handcrafted Curations</h1>
-          <div className='flex justify-between items-center text-center flex-wrap'>
+          <div className='flex justify-flexstart space-x-[100px] items-center text-center flex-wrap'>
             {
               HandcraftedCurations.map((el, index) => {
                 return (
-                  <Link to={"el"} className="flex justify-center items-center flex-col" key={el.title + index}>
+                  <Link to={el.link} className="flex justify-center items-center flex-col" key={el.title + index}>
                     <img src={el.img} className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full hover:border-2 border-green-600 border-solid m-1" alt=''/>
                     <p className='font-medium text-sm whitespace-normal sm:whitespace-nowrap'>{el.title}</p>
                   </Link>

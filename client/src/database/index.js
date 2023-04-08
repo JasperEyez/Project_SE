@@ -1,9 +1,6 @@
 import BestSeller from "../assests/img/Bestseller.jpg"
 import drinks from "../assests/img/Drinks.jpg"
 import food from "../assests/img/Food.jpg"
-import merchandise from "../assests/img/Merchandise.jpg"
-import coffeeAtHome from "../assests/img/CoffeeAtHome.jpg"
-import readyToEat from "../assests/img/ReadyToEat.jpg"
 
 import javaChip from "../assests/img/javaChip.jpg"
 import coldCoffe from "../assests/img/coldcoffee.jpg"
@@ -38,33 +35,18 @@ export const HandcraftedCurations = [
     {
         title: "BestSeller",
         img: BestSeller,
-        link: "BestSeller"
+        link: "/ordering"
     },
     {
         title: "Drinks",
         img: drinks,
-        link: "Drinks"
+        link: "/ordering/drinks"
     },
     {
         title: "Food",
         img: food,
-        link: "Food"
-    },
-    {
-        title: "Merchandise",
-        img: merchandise,
-        link: "Merchandise"
-    },
-    {
-        title: "Coffee At Home",
-        img: coffeeAtHome,
-        link: "CoffeeAtHome"
-    },
-    {
-        title: "Ready to Eat",
-        img: readyToEat,
-        link: "ReadytoEat"
-    },
+        link: "/ordering/food"
+    }
 ]
 
 
