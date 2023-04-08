@@ -1,0 +1,28 @@
+.boxorder {
+    display: flex;
+    white-space: nowrap;
+    overflow-y: hidden;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.boxorder::-webkit-scrollbar {
+    height: 5px;
+}
+.boxorder::-webkit-scrollbar-thumb {
+    background: #b7b7b7;
+    border-radius: 10px;
+}
+.boxorder::-webkit-scrollbar-track { 
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.showorder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.showorder .card-body {
+    width: 415px;
+}
