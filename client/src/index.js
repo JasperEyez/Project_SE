@@ -19,13 +19,15 @@ import OrderFood from './component/OrderFood';
 import OrderBestseller from './component/OrderBestseller';
 import OrderDrinks from './component/OrderDrinks';
 import Registration from './page/Registration';
+import Blogs from './page/Blogs';
+import Blogs1 from './page/Blogs1';
 
 
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route element = {<App/>}>
     <Route path='/' element ={<Home/>}/>
-    <Route path='/giftcards' element={<Gift />} >
+    <Route path='/giftcards' element={<Gift/>} >
         <Route path='' element={<GiftFeature/>}/>
         <Route path='anytime' element={<GiftAnytime/>}/>
         <Route path='Congratulations' element={<GiftCong/>}/>
@@ -41,6 +43,8 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/welcome' element ={<Welcome/>}/>
     <Route path='/login' element ={<Login/>}/>
     <Route path='/registration' element ={<Registration/>}/>
+    <Route path='/blogs' element ={<Blogs/>}/>
+    <Route path='/blogs1' element ={<Blogs1/>}/>
   </Route>
 
   

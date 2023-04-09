@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { HandcraftedCurations } from '../database'
 import slideImage1 from "../assests/img/Barista_Pride_ca8aec571f.png"
 import slideImage2 from "../assests/img/Group_1249_39083973b4.png"
@@ -200,9 +200,9 @@ function Home () {
         <div className='p-8 px-4 sm:px-0 md:w-4/5 m-auto relative mt-3'>
           <div className='flex  items-center w-full justify-between '>
             <h1 className='text-[#1e3932] text-2xl font-bold m-0'>Learn more about the world of coffee!</h1>
-            <button className='text-green-800 font-semibold m-0'>Discover More</button>
+            <NavLink to={"/blogs"}><button className='text-green-800 font-semibold m-0'>Discover More</button></NavLink>
           </div>
-
+          <NavLink to="/blogs1">
           <div className='h-96 w-full my-9 rounded-md overflow-hidden relative cursor-pointer'>
             <img src={Coffee_cherry_spices} className="h-full w-full object-cover" alt=''/>
             <div className='h-full bg-black bg-opacity-40 hover:bg-opacity-70 w-full absolute top-0 transition-all p-5 flex flex-col justify-between'>
@@ -210,17 +210,12 @@ function Home () {
               <div className='text-white'>
                 <h2 className='text-3xl font-bold py-2'>Species Of Coffee Trees</h2>
                 <p>Not all coffee is created equal!</p>
-                <button className='bg-white text-black w-full max-w-[200px] font-semibold text-sm py-1 rounded-full mt-10'>Learn More</button>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className='flex justify-center sm:hidden'>
-          <button className='bg-black text-white font-bold px-3 py-1 rounded-full'>Discover More</button>
+          </NavLink>
         </div>
       </section>
-
 
     </>
   )
