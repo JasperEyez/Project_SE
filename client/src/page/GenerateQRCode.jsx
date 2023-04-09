@@ -19,7 +19,7 @@ function QRCodeGenerator() {
   }
   return(
     <div>
-      <h2>Scan the QR code to pay.</h2>
+      <h2>Scan the QR code to pay</h2>
       <input type="text" value={phoneNumber} onChange={handlePhoneNumber} />
       <input type="number" value={amount} onChange={handleAmount} />
       <button onClick={handleQR}>Generate Promptpay QR</button>
