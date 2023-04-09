@@ -210,7 +210,7 @@ function Home () {
               <div className='text-white'>
                 <h2 className='text-3xl font-bold py-2'>Species Of Coffee Trees</h2>
                 <p>Not all coffee is created equal!</p>
-                <button className='bg-white text-black w-full max-w-[200px] font-semibold text-sm py-1 rounded-full mt-10'>Learn More</button>
+                
               </div>
             </div>
           </div>
