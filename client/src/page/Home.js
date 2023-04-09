@@ -37,7 +37,7 @@ function Home () {
         <div className=' text-white  text-lg tracking-wide w-full'>
           <div className='px-4  sm:px-0 md:w-4/5 m-auto flex justify-between items-center gap-5'>
             <p className='text-sm sm:text-xl max-w-md sm:max-w-xl'>A world of rewards awaits you! Sign up now.</p>
-            <Link to={"/login"} className='text-sm border-2 px-2 py-1 rounded-full whitespace-nowrap'>Sing up</Link>
+            <Link to={"/login"} className='text-sm border-2 px-2 py-1 rounded-full whitespace-nowrap'>Sign up</Link>
           </div>
         </div>
       </div>
