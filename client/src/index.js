@@ -21,6 +21,7 @@ import OrderDrinks from './component/OrderDrinks';
 import Registration from './page/Registration';
 import Blogs from './page/Blogs';
 import Blogs1 from './page/Blogs1';
+import GenerateQRCode from './page/GenerateQRCode';
 
 
 
@@ -45,6 +46,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/registration' element ={<Registration/>}/>
     <Route path='/blogs' element ={<Blogs/>}/>
     <Route path='/blogs1' element ={<Blogs1/>}/>
+    <Route path='/generateQRCode' element ={<GenerateQRCode/>}/>
   </Route>
 
   
