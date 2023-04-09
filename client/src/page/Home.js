@@ -112,7 +112,6 @@ function Home () {
                 <p className='font-bold text-lg'>฿ 250.00</p>
               </div>
               <p className='text-white text-xs font-bold ml-auto absolute right-5'>*T&C Apply</p>
-              <button className='bg-white text-black text-sm w-full max-w-[100px] sm:max-w-[150px] py-2 sm:py-3 right-1 bottom-1 sm:right-9 sm:bottom-5 absolute rounded-full'>Explore</button>
             </div>
             <div className='p-5 bg-[#ff4081] min-w-full rounded flex sm:gap-7 relative overflow-hidden'>
               <img src={slideImage2} className="h-full scale-125 w-16 sm:w-auto " alt=''/>
@@ -123,7 +122,6 @@ function Home () {
                 <p className='md:mt-5 text-xs sm:text-base'>Starting From</p>
                 <p className='font-bold text-lg'>฿ 1700.00</p>
               </div>
-              <button className='bg-white text-black text-sm w-full max-w-[100px] sm:max-w-[150px] py-2 sm:py-3 right-1 bottom-1 sm:right-9 sm:bottom-5 absolute rounded-full'>Explore</button>
             </div>
             <div className='p-5 bg-[#e0c4a0] min-w-full rounded flex sm:gap-7 relative overflow-hidden'>
               <img src={slideImage3} className="h-full scale-125 w-16 sm:w-auto " alt=''/>
@@ -134,7 +132,6 @@ function Home () {
                 <p className='md:mt-5 text-xs sm:text-base'>Starting From</p>
                 <p className='font-bold text-lg'>฿ 470.00</p>
               </div>
-              <button className='bg-white text-black text-sm w-full max-w-[100px] sm:max-w-[150px] py-2 sm:py-3 right-1 bottom-1 sm:right-9 sm:bottom-5 absolute rounded-full'>Explore</button>
             </div>
             <div className='p-5 bg-[#de7356] min-w-full rounded flex sm:gap-7 relative overflow-hidden'>
               <img src={slideImage4} className="h-full scale-125 w-16 sm:w-auto " alt=''/>
@@ -145,7 +142,6 @@ function Home () {
                 <p className='md:mt-5 text-xs sm:text-base'>Starting From</p>
                 <p className='font-bold text-lg'>฿ 250.00</p>
               </div>
-              <button className='bg-white text-black text-sm w-full max-w-[100px] sm:max-w-[150px] py-2 sm:py-3 right-1 bottom-1 sm:right-9 sm:bottom-5 absolute rounded-full'>Explore</button>
             </div>
             <div className='p-5 bg-[#f0982f] min-w-full rounded flex sm:gap-7 relative overflow-hidden'>
               <img src={slideImage5} className="h-full scale-125 w-16 sm:w-auto " alt=''/>
@@ -156,7 +152,6 @@ function Home () {
                 <p className='md:mt-5 text-xs sm:text-base'>Starting From</p>
                 <p className='font-bold text-lg'>฿ 2500.00</p>
               </div>
-              <button className='bg-green-900 text-white text-sm w-full max-w-[100px] sm:max-w-[150px] py-2 sm:py-3 right-1 bottom-1 sm:right-9 sm:bottom-5 absolute rounded-full'>Explore</button>
             </div>
             <div className='p-5 bg-[#f0dfb6] min-w-full rounded flex sm:gap-7 relative overflow-hidden'>
               <img src={slideImage6} className="h-full scale-125 w-16 sm:w-auto " alt=''/>
@@ -168,7 +163,6 @@ function Home () {
                 <p className='font-bold text-lg'>฿ 250.00</p>
               </div>
               <p className='text-white text-xs font-bold ml-auto absolute right-5'>*T&C Apply</p>
-              <button className='bg-green-900 text-white text-sm w-full max-w-[100px] sm:max-w-[150px] py-2 sm:py-3 right-1 bottom-1 sm:right-9 sm:bottom-5 absolute rounded-full'>Explore</button>
             </div>
           </div>
         </div>
