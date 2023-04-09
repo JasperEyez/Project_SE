@@ -7,7 +7,7 @@ const GiftCard = ({ img, title, desc }) => {
       <div className='ml-20'>
         <h3 className='font-semibold'>{title}</h3>
         <p className='text-sm py-2'>{desc}</p>
-        <button className='text-white bg-[#00754a] hover:bg-[#1e3932] mt-4 py-1 px-5 rounded-full'>Add Item</button>
+        <button className='font-sans text-white bg-[#00754a] hover:bg-[#1e3932] mt-4 py-1 px-5 rounded-full'>Add Item</button>
       </div>
     </div>
   )

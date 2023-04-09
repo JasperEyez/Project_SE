@@ -66,16 +66,16 @@ const Gift = () => {
       <div className='bg-[#f2f0eb]'>
         <div className='px-4 sm:px-0 md:w-4/5 m-auto relative '>
           <div className='flex uppercase overflow-auto scrollbar-none'>
-            <NavLink to={""} className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`} end>
+            <NavLink to={""} className={({ isActive }) => `font-sans px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 hover:border-b-2   ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`} end>
               Feature
             </NavLink>
-            <NavLink to="anytime" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>
+            <NavLink to="anytime" className={({ isActive }) => `font-sans px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>
               Anytime
             </NavLink>
-            <NavLink to="Congratulations" className={({ isActive }) => `px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>
+            <NavLink to="Congratulations" className={({ isActive }) => `font-sans px-10 border-r-2 h-full py-3 border-solid whitespace-nowrap border-gray-300 ${isActive ? "text-green-900 font-bold border-b-2 border-b-green-900 border-solid" : ""}`}>
               Congratulations
             </NavLink>
-            <NavLink to="thank" className={({ isActive }) => `px-10 h-full py-3 whitespace-nowrap ${isActive ? "text-green-900 font-bold border-b-2 border-green-900 border-solid" : ""}  `}>
+            <NavLink to="thank" className={({ isActive }) => `font-sans px-10 h-full py-3 whitespace-nowrap ${isActive ? "text-green-900 font-bold border-b-2 border-green-900 border-solid" : ""}  `}>
               Thank You
             </NavLink>
           </div>

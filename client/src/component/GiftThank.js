@@ -7,7 +7,7 @@ const GiftThank = () => {
   return (
     <>
     <div className='px-4 sm:px-0 md:w-4/5 m-auto relative '>
-      <h2 className='text-2xl my-3' >Congratulations</h2>
+      <h2 className='font-sans text-2xl my-3' >Congratulations</h2>
     </div>
     <div className='p-[0.5px] bg-gray-300'></div>
     <div className='px-4 sm:px-0 md:w-4/5 m-auto relative py-6 flex flex-wrap justify-between'>
