@@ -35,14 +35,87 @@ app.get('/menu', (req, res) => {
 });
 
 app.get('/cart', (req, res) => {
-    db.query("SELECT * FROM cart", (err, result) => {
+    const sql = 'SELECT * FROM cart INNER JOIN menu ON cart.item_id = menu.order_id';
+    db.query(sql, (err, result) => {
         if (err) {
-            console.log(err);
+        res.status(500).send(err);
         } else {
-            res.send(result);
+        res.status(200).send(result);
         }
     });
 });
+
+app.put('/cart', (req, res) => {
+    const sql = 'UPDATE cart SET quantity = ? WHERE id = ? AND item_id = ?';
+    db.execute(sql, [req.body.quantity, req.body.userId, req.body.itemId], (err, result) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send("Error update item to cart");
+        } else {
+            res.send("Item update to cart successfully");
+        }
+    });
+})
+
+app.post('/cart', (req,res) => {
+    const sql = "INSERT INTO cart (id, item_id, quantity) VALUES(?, ?, ?)";
+    db.execute(sql, [req.body.userId, req.body.itemId, 1], (err, result) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send("Error adding item to cart");
+        } else {
+            res.send("Item added to cart successfully");
+        }
+    });
+});
+
+app.get('/cart1', (req, res) => {
+    const sql = "SELECT * FROM cart WHERE id = ? AND item_id = ?";
+    db.execute(sql, [req.query.userId, req.query.itemId], (err, result) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(result);
+      }
+    });
+  });
+
+app.put('/cart1', (req, res) => {
+    const sql = "UPDATE cart SET quantity = ? WHERE id = ? AND item_id = ?";
+    db.execute(sql, [req.body.quantity, req.body.userId, req.body.itemId], (err, result) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send("Error update item to cart");
+        } else {
+            res.send("Item update to cart successfully");
+        }
+    });
+})
+
+app.post('/cart1', (req, res) => {
+    const sql = "INSERT INTO cart (id, item_id, quantity) VALUES(?, ?, ?)";
+    db.execute(sql, [req.body.userId, req.body.itemId, 1], (err, result) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send("Error adding item to cart");
+        } else {
+            res.send("Item added to cart successfully");
+        }
+    });
+})
+
+app.delete('/cart', (req, res) => {
+    console.log(req.body.id); // Renamed from userId
+    const sql = "DELETE FROM cart WHERE id = ? AND item_id = ?";
+    db.execute(sql, [req.body.id, req.body.item_id], (err, result) => {
+      if(err) {
+        console.log(err);
+        res.status(500).send("Error removing item from cart");
+      } else {
+        res.sendStatus(204);
+      }
+    });
+  });
 
 app.post('/register', jsonParser, function(req, res, next) {
     db.execute('SELECT * FROM user WHERE email=? OR phone=?', [req.body.email, req.body.mobileNumber],

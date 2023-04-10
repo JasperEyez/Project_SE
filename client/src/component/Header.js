@@ -15,17 +15,10 @@ const Header = () => {
         </div>
         <nav className='flex gap-10 lg:gap-16 xl:mr-10'>
             <NavLink to={""} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Home</NavLink>
-            <NavLink to={"giftcards"} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Gift</NavLink>
             <NavLink to={"ordering"} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Order</NavLink>
             <NavLink to={"pay"} className={({ isActive }) => `w-[65.6px] text-rgb(33, 37, 41) text-center ${isActive ? "border-b-2 font-bold pb-2 border-solid border-green-800" : ""} `}>Payment</NavLink>
             
         </nav>
-
-        <div className=' text-xl text-slate-500 w-full max-w-[700px] shadow-md flex py-2 px-5 rounded-full '>
-            <BsSearch />
-            <input type="text" className='text-sm w-full bg-transparent border-none outline-none px-3' placeholder="Looking for something specific ?" />
-        </div>
-
         <div className='text-xl text-slate-500 border p-1 rounded-full border-slate-500 xl:ml-auto'>
             <NavLink to={"profile"}><RiUserLine /></NavLink>
         </div>
