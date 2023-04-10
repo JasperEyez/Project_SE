@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2023 at 01:37 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Apr 10, 2023 at 06:54 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,19 +28,25 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart` (
-  `cart_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `amount` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `id` int(11) NOT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cart_id`, `user_id`, `order_id`, `amount`) VALUES
-(1, 1, 1, 2),
-(1, 1, 2, 1);
+INSERT INTO `cart` (`id`, `item_id`, `quantity`, `created_at`) VALUES
+(3, 1, 1, '2023-04-10 14:33:41'),
+(3, 7, 1, '2023-04-10 14:37:50'),
+(3, 2, 1, '2023-04-10 15:07:42'),
+(3, 4, 1, '2023-04-10 15:07:43'),
+(4, 2, 2, '2023-04-10 15:50:30'),
+(4, 4, 1, '2023-04-10 15:51:00'),
+(5, 2, 1, '2023-04-10 16:32:58'),
+(5, 8, 1, '2023-04-10 16:41:01');
 
 -- --------------------------------------------------------
 
@@ -55,7 +61,7 @@ CREATE TABLE `menu` (
   `order_price` int(11) NOT NULL,
   `order_type` varchar(100) NOT NULL,
   `order_pic` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menu`
@@ -81,17 +87,17 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `phone` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `phone` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `phone`) VALUES
-(1, 'Tester01@email.com', 'Tester01', 123456789),
-(2, 'oil111@gmail.com', '$2b$10$/fkeuMEJsPqnWObTqtXoP.a7JIXv5QmXCqWmk29C.2r7HSgKV3Rve', 835559999),
-(3, 'hihi@gmail.com', '$2b$10$OGlKmzLAGqGa6rSl4r6zFOxMdyL/UVFMzjuOvy77092DNSYs8Fjey', 896667777);
+(3, 'Tester01@email.com', '$2b$10$H1v/Q90Fyy8mHAlHhS0Q2ebdIpa7PmOJDhrDFLEMJclf3vO1hQ226', '0123456789'),
+(4, 'Tester02@email.com', 'Tester02', '9876543210'),
+(5, 'Admin@email.com', 'Admin', '0123456213');
 
 --
 -- Indexes for dumped tables
@@ -101,8 +107,7 @@ INSERT INTO `user` (`user_id`, `email`, `password`, `phone`) VALUES
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `order_id` (`order_id`);
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `menu`
@@ -124,7 +129,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -134,8 +139,7 @@ ALTER TABLE `user`
 -- Constraints for table `cart`
 --
 ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `menu` (`order_id`);
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
