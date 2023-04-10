@@ -35,11 +35,12 @@ app.get('/menu', (req, res) => {
 });
 
 app.get('/cart', (req, res) => {
-    const sql = 'SELECT * FROM cart INNER JOIN menu ON cart.item_id = menu.order_id';
-    db.query(sql, (err, result) => {
+    const sql = 'SELECT * FROM cart JOIN user ON cart.id = ? AND user.user_id = ? INNER JOIN menu ON cart.item_id = menu.order_id';
+    db.execute(sql, [req.query.userId, req.query.userId], (err, result) => {
         if (err) {
         res.status(500).send(err);
         } else {
+            console.log(result.length)
         res.status(200).send(result);
         }
     });
