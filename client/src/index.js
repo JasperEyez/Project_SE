@@ -26,9 +26,8 @@ import GenerateQRCode from './page/GenerateQRCode';
 //Redux
 import { Provider } from "react-redux"
 import { createStore } from "redux"
-import { composeWithDevTools } from "redux-devtools-extension"
 import rootReducer from './reducer/combineReduxer';
-const store = createStore(rootReducer, composeWithDevTools())
+const store = createStore(rootReducer)
 
 
 const router = createBrowserRouter(createRoutesFromElements(
