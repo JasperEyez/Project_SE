@@ -14,9 +14,13 @@ import Coffee_cherry_spices from "../assests/img/Coffee_cherry_spices_9de46c3e1b
 import Axios from 'axios'
 import { useState, useEffect } from 'react'
 
+//Redux
+import {useSelector} from "react-redux"
+
 function Home () {
 
   const [menuList,setMenuList] = useState([]);
+  const {user} = useSelector((state)=> ({...state}))
 
   useEffect(() => {
     fetchMenu();
@@ -36,8 +40,13 @@ function Home () {
       <div className='bg-[#1e3932] py-2 sm:py-6'>
         <div className=' text-white  text-lg tracking-wide w-full'>
           <div className='px-4  sm:px-0 md:w-4/5 m-auto flex justify-between items-center gap-5'>
-            <p className='text-sm sm:text-xl max-w-md sm:max-w-xl'>A world of rewards awaits you! Sign up now.</p>
-            <Link to={"/login"} className='text-sm border-2 px-2 py-1 rounded-full whitespace-nowrap'>Sign up</Link>
+            {!user && <>
+              <p className='text-sm sm:text-xl max-w-md sm:max-w-xl'>A world of rewards awaits you! Sign up now.</p>
+              <Link to={"/login"} className='text-sm border-2 px-2 py-1 rounded-full whitespace-nowrap'>Sign up</Link>
+            </>}
+            {user && <>
+              <p className='text-sm sm:text-xl max-w-md sm:max-w-xl'>Welcome To Starzon Cafe</p>
+            </>}
           </div>
         </div>
       </div>
