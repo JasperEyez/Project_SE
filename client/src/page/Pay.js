@@ -3,7 +3,7 @@ import './css/Pay.css'
 import Axios from 'axios'
 import { useState, useEffect } from 'react'
 import {useSelector} from "react-redux"
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Pay () {
 
@@ -21,7 +21,7 @@ function Pay () {
   }, []);
 
   const fetchCart = () => {
-  Axios.get('http://localhost:3001/cart')
+  Axios.get(`http://localhost:3001/cart?userId=${user.userID}`)
     .then((res) => {
       setCartList(res.data);
       const itemIds = res.data.map((item) => item.itemId);
@@ -85,7 +85,6 @@ function Pay () {
   };
 
   const total = getTotal();
-  const navigate = useNavigate();
 
   const delCart = (itemId) => {
     const userId = user.userID;
@@ -108,9 +107,14 @@ function Pay () {
   } 
 
   return (
-    <div className='py-3'>
+      <div className='py-3'>
       <div className="showcart">
+      {!user && <>
+        <h1>Login to buy some order.</h1>
+      </>}
+      {user && <>
           {cartList.map((val, key) => {
+            if(cartList.length > 0) {
             return (
               <div className="cart card">
                 <div className="card-body">
@@ -141,12 +145,19 @@ function Pay () {
                 </div>
               </div>
             )
+            } else {
+              return (
+                <>
+                <h1>Not have any order.</h1>
+                </>
+              )
+            }
           })}
           <div className="total-box">
             <p className="total">{total} Bath</p>
             <NavLink to="/generateQRCode"><button className='checkout'>Checkout</button></NavLink>
           </div>
-          
+          </>}
       </div>
     </div>
   )

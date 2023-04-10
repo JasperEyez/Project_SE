@@ -35,7 +35,7 @@ function Drinks() {
       quantity: 1
     };
     console.log(userId)
-    console.log(itemId)
+    // console.log(itemId)
     // Check if the item already exists in the cart
     Axios.get(`http://localhost:3001/cart1?userId=${userId}&itemId=${itemId}`)
     .then((response) => {
@@ -54,8 +54,7 @@ function Drinks() {
         });
       } else {
         // Item does not exist in the cart, add it
-        // var c = cartItem;
-        // console.log(c)
+        // console.log(cartItem)
         Axios.post('http://localhost:3001/cart1', cartItem)
         .then((response) => {
           console.log(response.data);

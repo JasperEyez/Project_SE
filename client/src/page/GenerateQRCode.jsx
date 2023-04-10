@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { Modal } from 'antd';
 import img1 from '../assests/img/bg_login.png';
 import '../page/css/genQRCode.css';
+import {useSelector} from "react-redux"
 
 const generatePayload = require('promptpay-qr');
 
@@ -14,9 +15,10 @@ function QRCodeGenerator() {
   const [amount, setAmount] = useState(1.0);
   const [qrCode, setqrCode] = useState('sample');
   const [open, setOpen] = useState(false);
+  const {user} = useSelector((state)=> ({...state}))
 
   const fetchCart = () => {
-    Axios.get('http://localhost:3001/cart')
+    Axios.get(`http://localhost:3001/cart?userId=${user.userID}`)
       .then((res) => {
         setCartList(res.data);
         const itemIds = res.data.map((item) => item.itemId);

@@ -90,7 +90,6 @@ function Home () {
                       </div>
                       <div className='flex justify-between font-semibold my-2'>
                         <p>฿ <span>{val.order_price}</span></p>
-                        <button className='text-white bg-[#00754a] hover:bg-[#1e3932] shadow-[0 4px 15px #a3a3a3ad] py-1 px-5 rounded-full'>Add Item</button>
                       </div>
                     </div>
                   )
@@ -101,9 +100,6 @@ function Home () {
           </div>
         </div>
       </div>
-
-
-
 
       <div className='bg-white py-14'>
 
@@ -191,7 +187,6 @@ function Home () {
                       <p className='my-5 text-xs text-gray-500'>{el.desc}</p>
                       <div className='flex justify-between font-semibold my-2'>
                         <p>฿ <span>{el.price}</span></p>
-                        <button className='text-white bg-[#00754a] hover:bg-[#1e3932] py-1 px-5 rounded-full'>Add Item</button>
                       </div>
                     </div>
 

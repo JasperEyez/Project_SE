@@ -9,6 +9,10 @@ import Validation from '../function/loginValidation'
 //Redux
 import { useDispatch } from 'react-redux';
 
+const re = () => {
+  window.location.reload(false);
+} 
+
 const Login = () => {
 
   const dispatch = useDispatch()
@@ -45,8 +49,9 @@ const Login = () => {
                 email: res.data.payload.user.email,
                 phone: res.data.payload.user.phone
               }})   
-            localStorage.setItem('token', res.data.token)                
-            navigate('/');  
+            localStorage.setItem('token', res.data.token)
+                      
+            navigate('/');  re();
             return                  
           } else {                    
             alert("No record existed");    

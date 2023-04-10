@@ -15,6 +15,7 @@ function OrderBestseller() {
 
   useEffect(() => {
     fetchMenu();
+    console.log(user.userID)
   }, []);
 
   const fetchMenu = () => {
@@ -53,8 +54,7 @@ function OrderBestseller() {
         });
       } else {
         // Item does not exist in the cart, add it
-        // var c = cartItem;
-        // console.log(c)
+        // console.log(cartItem)
         Axios.post('http://localhost:3001/cart1', cartItem)
         .then((response) => {
           console.log(response.data);
@@ -87,7 +87,7 @@ function OrderBestseller() {
                       </div>
                       <div className="card-footer">
                         <p className="card-price">{val.order_price} Bath</p>
-                        <button onClick={ () => {alert("Order Added"); addToCart(val.order_id);} }>Add item</button>
+                        <button onClick={ () => {alert("Order Added"); addToCart(val.order_id); console.log(user.userId);} }>Add item</button>
                       </div>
                     </div>
                   </div>
