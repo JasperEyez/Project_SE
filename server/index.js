@@ -156,6 +156,13 @@ app.post('/login', (req, res) => {
                 return
             }
 
+            console.log(user[0].password)
+            console.log(req.body.password)
+
+            if (!c.isEqual(user[0].password, req.body.password)) {
+                return res.status(400).send("Password Incorrect")
+            }
+
             if (user.length > 0) {
                 const payload = {
                     user: {
