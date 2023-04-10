@@ -6,7 +6,12 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Validation from '../function/loginValidation'
 
+//Redux
+import { useDispatch } from 'react-redux';
+
 const Login = () => {
+
+  const dispatch = useDispatch()
 
   const [values, setValues] = useState({        
     email: '',        
@@ -31,9 +36,16 @@ const Login = () => {
           setBackendError(res.data.errors);                
         } else {                    
           setBackendError([]);                    
-          if(res.data.status === "ok") {   
+          if(res.data.token) {   
             alert("Login Success")  
-            localStorage.setItem('token', res.data.token)                   
+            dispatch({
+              type:'LOGIN',
+              payload: {
+                token: res.data.token,
+                email: res.data.payload.user.email,
+                phone: res.data.payload.user.phone
+              }})   
+            localStorage.setItem('token', res.data.token)                
             navigate('/');  
             return                  
           } else {                    

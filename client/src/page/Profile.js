@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink} from 'react-router-dom'
 import '../page/css/Profile.css';
 import bgimage from "../assests/img/bg_profile.jpg"
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
-
+  const {user} = useSelector((state)=> ({...state}))
   return (
     <div className='box'>
       <div className='tag'>
@@ -19,7 +20,10 @@ const Profile = () => {
           <img src={bgimage}  alt="" />
         </div>
         <h1>Welcome to Starzon</h1>
-        <a href="login"><button>Login or Sign Up</button></a>
+        {user
+          ?<a href="login"><button>Login or Sign Up</button></a>
+          :<a href="login"><button>You Logged In</button></a>
+        }
       </div>
     </div>
   );

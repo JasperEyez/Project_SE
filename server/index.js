@@ -14,6 +14,9 @@ app.use(express.json());
 
 const c = require('lodash')
 
+//middleware
+const { auth } = require('./middleware/auth')
+
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
@@ -81,8 +84,17 @@ app.post('/login', (req, res) => {
             }
 
             if (user.length > 0) {
-                const token = jwt.sign({ email: user[0].email }, secret, { expiresIn: '10h' })
-                res.json({ status: 'ok', message: 'login success', token })
+                const payload = {
+                    user: {
+                        email: user[0].email,
+                        phone: user[0].phone
+                    },
+                };
+                const token = jwt.sign(payload, secret, { expiresIn: '10h' }, (err, token) => {
+                        if (err) throw err;
+                        res.json({ token, payload })
+                    })
+                    //res.json({ status: 'ok', message: 'login success', token })
                 return
             } else {
                 res.json({ status: 'error', message: 'login failed' })
@@ -93,13 +105,24 @@ app.post('/login', (req, res) => {
         })
 })
 
-app.post('/authen', jsonParser, function(req, res, next) {
+app.post("/current-user", auth, function(req, res, next) {
     try {
-        const token = req.headers.authorization.split(' ')[1]
-        const decoded = jwt.verify(token, secret)
-        res.json({ status: 'ok', decoded })
+        db.execute('SELECT user_id, email, phone FROM user WHERE email=?', [req.user.email],
+            function(err, user, fields) {
+                if (err) {
+                    retrurn
+                } else {
+                    const userInfo = {
+                        userID: user[0].user_id,
+                        email: user[0].email,
+                        phone: user[0].phone,
+                    }
+                    return res.send(userInfo)
+                }
+            })
     } catch (err) {
-        res.json({ status: 'error', message: err.message })
+        console.log(err)
+        res.status(500).send("Server Error")
     }
 })
 

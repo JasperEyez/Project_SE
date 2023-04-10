@@ -33,7 +33,6 @@ function registerValidation(values) {
     } else if (check.isEqual(values.cfPassword, values.password)) {
         error.cfPassword = ""
     } else {
-        console.log(typeof(values.cfPassword))
         error.cfPassword = "Confirm Password does not match"
     }
 
