@@ -19,11 +19,14 @@ const Profile = () => {
         <div className="bg">
           <img src={bgimage}  alt="" />
         </div>
-        <h1>Welcome to Starzon</h1>
-        {user
-          ?<a href="login"><button>Login or Sign Up</button></a>
-          :<a href="login"><button>You Logged In</button></a>
-        }
+        {user && <>
+          <h1>{user.email}</h1>
+          <a href="login"><button>You Logged In</button></a>
+        </>}
+        {!user && <>
+          <h1>Welcome to Starzon</h1>
+          <a href="login"><button>Login or Sign Up</button></a>
+        </>} 
       </div>
     </div>
   );
