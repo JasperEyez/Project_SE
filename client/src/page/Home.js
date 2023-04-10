@@ -203,7 +203,6 @@ function Home () {
         </div>
       </div>
 
-
       {/* Learn more about the world of coffee! */}
       <section className=''>
         <div className='p-8 px-4 sm:px-0 md:w-4/5 m-auto relative mt-3'>
