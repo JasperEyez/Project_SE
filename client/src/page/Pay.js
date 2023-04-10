@@ -95,16 +95,13 @@ function Pay () {
     Axios.delete(`http://localhost:3001/cart`, { data: cartItem })
     .then((response) => {
       console.log(response.data);
-      // navigate('/pay');
+      // Remove the deleted item from the cartList state
+      setCartList(cartList.filter((item) => item.item_id !== itemId));
     })
     .catch((error) => {
       console.error(error);
     });
   }
-
-  const re = () => {
-    window.location.reload(false);
-  } 
 
   return (
       <div className='py-3'>
@@ -134,7 +131,7 @@ function Pay () {
                   </div>
                   <div className="card-edit">
                     <div className="x">
-                      <button onClick={() => {delCart(val.item_id); re();}}>x</button>
+                      <button onClick={() => {delCart(val.item_id);}}>x</button>
                     </div>
                     <div className="input-box">
                       <button id='down' onClick={() => decrementCount(val.item_id)}>-</button>
